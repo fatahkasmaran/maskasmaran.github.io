@@ -32,9 +32,7 @@ for data in json_data:
         else:
             tweet_properties['tweet'] = re.sub(
                 "(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", data['text'].lower())
-        # words += tweet_properties['tweet']
-        # words.append(tweet_properties['tweet'])
-        # data = data.append(pd.DataFrame([[data['created_at']], 'test'], columns=('date', 'sentiment')), ignore_index=True)
+        
         hoho['tanggal'].append(data['created_at'])
         hoho['sentimen'].append(tb(translator.translate(
             tweet_properties['tweet'])).polarity)
