@@ -6,7 +6,7 @@ from datetime import date, time, datetime
 
 tweet_properties = {}
 
-with open("aaa3357.json", "r") as data_read:
+with open("JSONFILE.json", "r") as data_read:
     json_data = json.load(data_read)
 
 with open('NEWFILE.csv', 'w') as f:
