@@ -30,8 +30,8 @@ print(df)
 
 tweets = []
 for word in df.tweet:
-    text = str(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)",
-                           " ", word.lower()))
+#     text = str(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)",
+#                            " ", word.lower()))
     tweets.append(word_tokenize(text))
     
 
