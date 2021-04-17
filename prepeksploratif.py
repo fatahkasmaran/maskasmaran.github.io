@@ -4,18 +4,11 @@ import pandas as pd
 import numpy as np 
 from csv import DictWriter, writer
 from datetime import date, time, datetime
-import nltk
-from nltk.tokenize import sent_tokenize, word_tokenize
-from nltk.corpus import stopwords
-from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
 with open("YOURFILENAME.json", "r") as data_read:
     json_data = json.load(data_read)
 
 tweet_properties = {}
-listStopword = set(stopwords.words('indonesian'))
-factory = StemmerFactory()
-stemmer = factory.create_stemmer()   
 
 with open('YOURNEWFILENAME.csv', 'w') as f:
     csv_writer = DictWriter(f, fieldnames=[
