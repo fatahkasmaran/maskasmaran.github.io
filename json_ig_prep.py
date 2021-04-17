@@ -19,7 +19,7 @@ with open('diindonesiaaja.csv', 'w') as f:
             pass
         csv_writer.writerow({
             'user_id': d['id'],
-            'date': d['taken_at_timestamp'],
+            'date': datetime.datetime.fromtimestamp(d['taken_at_timestamp']).strftime('%d-%m-%Y %H:%M:%S'),
             'caption': insta_properties['caption'],
             'url': d['display_url']
             #             'comments': d['edge_media_to_comment']['count'],
