@@ -1,12 +1,13 @@
 import json
 
 result = []
-for num in range(1, 1000000):
-    with open("YOURFILENAME"+str(num)+".json") as infile:
+for num in range(1, 70):
+    with open("vaksin"+str(num)+".json") as infile:
         json_data = json.load(infile)
-        for data in json_data.get('results'):
-            result.append(data)
-with open("NEWFILENAME.json", "w") as outfile:
-    json.dump(result, outfile)  
-
-print('done!')
+        if json_data.get('results') is not None:
+            for data in json_data.get('results'):
+                result.append(data)
+with open("antrivaksin.json", "w") as outfile:
+    json.dump(result, outfile)  # print(result)
+     
+print("DONE!!!")
