@@ -44,10 +44,28 @@ for t in tweets:
 
 plt.close()
 
-wordcloud = WordCloud(max_font_size=50, max_words=1000,
-                      background_color="white").generate(words)
+x, y = np.ogrid[:300, :300]
+mask = (x - 150) ** 2 + (y - 150) ** 2 > 130 ** 2
+mask = 255 * mask.astype(int)
+circle = np.array(Image.open('circle.jpeg'))
+black = '#000000'
+yellow = '#FFFF00'
+orange = '#FFA500'
+green = '#00FF00'
+blue = '#0000FF'
+red = '#FF0000'
+
+color_list= blue
+
+#transfer
+colormap=colors.ListedColormap(color_list)
+
+wordcloud = WordCloud(background_color="white",
+ mask=circle, width=mask.shape[1], height=mask.shape[0], colormap=colormap, max_words=1000).generate(words)
 
 plt.figure()
 plt.imshow(wordcloud, interpolation="bilinear")
 plt.axis("off")
+print('Showing graph..')
 plt.show()
+print('Graph closed')
