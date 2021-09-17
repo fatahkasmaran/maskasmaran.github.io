@@ -4,6 +4,16 @@ import re
 import pandas as pd
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.corpus import stopwords
+import numpy as np
+from PIL import Image
+import stylecloud
+from matplotlib import colors
+
+import re
+import collections
+from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator  
+from PIL import Image
+import matplotlib.pyplot as plt 
 
 listStopword = set(stopwords.words('indonesian'))
 
